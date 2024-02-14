@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "docker build -t test . && docker run --rm -it -p 3000:3000 test"
+  },
+  "dependencies": {
+    "formidable": "^3.5.1",
+    "koa": "^2.15.0",
+    "koa-body": "^6.0.1",
+    "unzipper": "^0.10.14"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "@types/unzipper": "^0.10.9",
+    "tsx": "^3.12.2",
+    "typescript": "^5.3.3"
+  }
+}

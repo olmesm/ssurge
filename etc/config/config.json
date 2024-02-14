@@ -1,0 +1,32 @@
+{
+  "listeners": {
+    "*:3000": {
+      "pass": "routes"
+    }
+  },
+  "routes": [
+    {
+      "action": {
+        "share": "/www/static/$uri",
+        "fallback": {
+          "pass": "applications/node"
+        }
+      }
+    }
+  ],
+  "applications": {
+    "node": {
+      "type": "external",
+      "working_directory": "/www",
+      "executable": "/usr/bin/env",
+      "arguments": [
+        "node",
+        "--loader",
+        "unit-http/loader.mjs",
+        "--require",
+        "unit-http/loader",
+        "dist/index.js"
+      ]
+    }
+  }
+}
